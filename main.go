@@ -47,6 +47,9 @@ func main() {
 	r := e.Group("/admin", jwt)
 	r.POST("", Restricted)
 
+	// Profiling
+	// profiling.Wrap(e)
+
 	e.Validator = utils.NewValidator()
-	e.Logger.Fatal(e.Start(":8000"))
+	e.Logger.Fatal(e.Start(":8001"))
 }

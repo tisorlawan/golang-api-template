@@ -1,12 +1,10 @@
 package handlers
 
 import (
-	"library/app/utils/log"
 	"net/http"
 	"time"
 
 	"github.com/labstack/echo/v4"
-	"go.uber.org/zap"
 )
 
 type Book struct {
@@ -23,7 +21,7 @@ func HandleBook(c echo.Context) (err error) {
 	if err = c.Validate(book); err != nil {
 		return
 	}
-	log.Info("Book", zap.String("Title", book.Title))
-	book.PublishedDate = book.PublishedDate.Add(1000 * time.Hour)
+	// log.Info("Book", zap.String("Title", book.Title))
+	// book.PublishedDate = book.PublishedDate.Add(1000 * time.Hour)
 	return c.JSON(http.StatusOK, book)
 }

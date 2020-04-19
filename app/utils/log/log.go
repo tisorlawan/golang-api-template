@@ -2,6 +2,7 @@ package log
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"time"
 
@@ -23,6 +24,7 @@ var Debug = logger.Debug
 var Info = logger.Info
 var Warn = logger.Warn
 var Error = logger.Error
+var Println = log.Println
 
 func Sync() {
 	logger.Sync()
